@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>innerHTML</h1>
+    <hr />
+    <h2 id="h2">이번 여행은 어디로?</h2>
+
+    <script>
+    const tag = document.getElementById('h2');
+    
+    tag.onclick = function() {
+        
+        const text = prompt("HTML 텍스트 혹은 텍스트로 여행지를 입력해주세요.");
+
+        
+        if (text !== null) {
+            tag.innerHTML = text;
+        }
+
+    };
+    </script>
+</body>
+</html>
