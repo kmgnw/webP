@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 9-2</title>
+    <style>
+        #image-container {
+            margin-top: 20px;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>라디오 버튼을 클릭하면 이미지를 출력합니다.</h1>
+
+    <hr>
+
+    <input type="radio" name='fruit' value="./assets/apple.png" onclick="showImage(this)"> 사과
+    <input type="radio" name='fruit' value="./assets/banana.png" onclick="showImage(this)"> 바나나
+    <input type="radio" name='fruit' value="./assets/apple.png" onclick="showImage(this)"> 키위
+
+    <br>
+
+    <img src="" id="img" alt="this is image area">
+
+    <h1>계산기</h1>
+    <hr>
+    <input type="text" id='text' onkeydown="whatKeyDown(event)" >
+    <div id="result"></div>
+
+    <script>
+
+        function whatKeyDown(e) {
+            let resultBox = document.getElementById('result');
+
+
+            if (e.key === 'Enter') {
+                
+                let result = eval(document.getElementById('text').value);
+                
+                resultBox.innerHTML = `${result}`;
+
+            }
+        }
+
+        function showImage(e) {
+            let img = new Image();
+            img.src = e.value;
+            e.parentElement.appendChild(img);
+        }
+
+        function showImage2(e) {
+            let img = document.getElementsById('img');
+            img.src = e.value;
+        }
+    </script>
+
+</body>
+
+</html>
