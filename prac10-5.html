@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div 태그에 시계 만들기</title>
+</head>
+<body>
+    <h1>div 태그에 시계 만들기</h1>
+    <hr>
+    <div id="clock"></div>
+    <script>
+        let clock = document.getElementById("clock");
+        
+        setInterval(() => {
+            let time = new Date();
+            clock.innerHTML = time.toLocaleTimeString();    
+        }, 1000);
+    </script>
+</body>
+</html>
