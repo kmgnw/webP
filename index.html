@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Counter</title>
+</head>
+<body>
+    <p id="visit-count">어서오십시오. ksd님의 1번째 방문을 환영합니다!</p>
+
+    <script>
+        sessionStorage.setItem("userId", "kgw");
+        // 방문 횟수 확인
+        let visitCount = sessionStorage.getItem("visitCount");
+        let userId = sessionStorage.getItem("userId");
+
+        // 세션 스토리지에 값이 없으면 1로 설정하고, 있다면 증가
+        if (!visitCount) {
+            visitCount = 1;
+        } else {
+            visitCount = parseInt(visitCount) + 1;
+        }
+
+        // 업데이트된 방문 횟수를 세션 스토리지에 저장
+        sessionStorage.setItem("visitCount", visitCount);
+
+        // 페이지에 방문 횟수 표시
+        document.getElementById("visit-count").innerText = `어서오십시오. ${userId}님의 ${visitCount}번째 방문을 환영합니다!`;
+    </script>
+</body>
+</html>
